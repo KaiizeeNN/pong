@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Ball ball;
+    public TMP_Text textMeshProComputer;
+    public TMP_Text textMeshProPlayer;
+
+    private int playerScore;
+    private int computerScore;
+
+    public void PlayerScores()
     {
-        
+
+        playerScore++;
+        textMeshProPlayer.text = playerScore.ToString();
+        this.ball.ResetPosition();
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ComputerScores()
     {
-        
+        computerScore++;
+        textMeshProComputer.text = computerScore.ToString();
+        this.ball.ResetPosition();
     }
+
+
 }

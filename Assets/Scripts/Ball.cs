@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
 
     public void Start()
     {
-        AddStartingForce();
+        ResetPosition();
     }
     private void Awake()
     {
@@ -22,6 +22,8 @@ public class Ball : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         rb.position = Vector2.zero;
+
+        AddStartingForce();
     }
 
     public void AddStartingForce()
@@ -47,5 +49,4 @@ public class Ball : MonoBehaviour
         currentSpeed = Mathf.Min(currentSpeed, maxSpeed);
         rb.velocity = direction * currentSpeed;
     }
-
 }
